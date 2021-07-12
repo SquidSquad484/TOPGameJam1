@@ -3,7 +3,6 @@
     coderlore
     iketaco
     AqueousOtter
-
     Game Specs:
         Random word is chosen and characters are randomly jumbled
         Word is presented to player

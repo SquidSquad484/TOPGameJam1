@@ -3,7 +3,6 @@
     coderlore
     iketaco
     AqueousOtter
-
     Game Specs:
         Random word is chosen and characters are randomly jumbled
         Word is presented to player
@@ -12,14 +11,33 @@
         If the player’s word is NOT equal to the original word, the lose/lose one chance or heart
 */
 
-//set up local storage with default score list
+//global varibles
+const secondGradeList1 = ["gravity", "orbit", "space", "earth", "travel", "solar", "planet", "shuttle", "launch", "universe"];
+const thirdGradeList1 = ["observe", "distant", "solution", "approach", "saturn", "jupiter", "atmosphere", "intelligent", "theory", "globe"];
+const fourthGradeList1 = ["accurate", "extraordinary", "peculiar", "peculiar", "surface", "impact", "descend", "millennium", "century", "frontier"];
 
-
-//arrays/objects with default words
-
-//array/object logic to handle user adding custom list
+let userScore;
+let highScore; //to be set by gameplay/loaded from previous plays.
 
 //main game functions
 
 //main game logic
 
+//local storage function for scores
+function updateHighScore(userScore){
+    let oldScore = localStorage.getItem("userHighScore");
+    if (oldScore < userScore){
+        localStorage.setItem("userHighScore", userScore);
+    }
+}
+//events to run when DOM loaded
+document.addEventListener("DOMContentLoaded", ()=>{
+
+    //checks for previous high score, sets to 0 if none, sets highscore to stored highscore otherwise.
+    if(localStorage.length == 0){
+        localStorage.setItem("userHighScore", 0);
+    }
+    else{
+        highScore = localStorage.getItem("userHighScore");
+    }
+})

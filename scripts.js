@@ -21,6 +21,27 @@ let highScore; //to be set by gameplay/loaded from previous plays.
 
 //main game functions
 
+//choose random element from chosen array
+let newWord = secondGradeList1[Math.floor(Math.random() * secondGradeList1.length)];
+console.log(newWord);
+
+//shuffles word
+function shuffle(word) {
+    let wordArr = [];
+    let randomArr = []; 
+    for (i = 0; i < word.length; i++) {
+        wordArr.push(word[i]);
+    }
+    for (j = 0; j < word.length; j++) {
+        let random = Math.floor(Math.random() * wordArr.length);
+        randomArr.push(wordArr[random]);
+        wordArr.splice(random,1);
+    }
+    console.log(randomArr);
+}
+
+shuffle(newWord);
+
 //main game logic
 
 //local storage function for scores

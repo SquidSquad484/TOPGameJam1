@@ -14,16 +14,18 @@
 //global varibles
 const secondGradeList1 = ["gravity", "orbit", "space", "earth", "travel", "solar", "planet", "shuttle", "launch", "universe"];
 const thirdGradeList1 = ["observe", "distant", "solution", "approach", "saturn", "jupiter", "atmosphere", "intelligent", "theory", "globe"];
-const fourthGradeList1 = ["accurate", "extraordinary", "peculiar", "peculiar", "surface", "impact", "descend", "millennium", "century", "frontier"];
+const fourthGradeList1 = ["accurate", "extraordinary", "peculiar", "astronaut", "surface", "impact", "descend", "millennium", "century", "frontier"];
 
-let userScore;
+let userScore =0;
 let highScore; //to be set by gameplay/loaded from previous plays.
 
-//main game functions
 
-//choose random element from chosen array
-let newWord = secondGradeList1[Math.floor(Math.random() * secondGradeList1.length)];
-console.log(newWord);
+//main game functions
+const shuffleDisplay = document.getElementById("letterDisplay");
+const newButton = document.getElementById("new"); //new word button
+const userInput = document.getElementById("userInput");
+const submit = document.getElementById("submit");
+let wordToGuess;
 
 //shuffles word
 function shuffle(word) {
@@ -32,16 +34,41 @@ function shuffle(word) {
     for (i = 0; i < word.length; i++) {
         wordArr.push(word[i]);
     }
+    let capitolWordArr = wordArr.map(wordArr => wordArr.toUpperCase()); //capitolizes letter
     for (j = 0; j < word.length; j++) {
-        let random = Math.floor(Math.random() * wordArr.length);
-        randomArr.push(wordArr[random]);
-        wordArr.splice(random,1);
+        let random = Math.floor(Math.random() * capitolWordArr.length); 
+        randomArr.push(capitolWordArr[random]);
+        capitolWordArr.splice(random,1);
+        shuffleDisplay.innerHTML +=randomArr[j];  //displays jumbled word
     }
-    console.log(randomArr);
 }
 
-shuffle(newWord);
-
+//generates new word
+newButton.addEventListener("click", () =>{
+    shuffleDisplay.innerText = "";
+    //choose random element from chosen array
+    let newWord = secondGradeList1[Math.floor(Math.random() * secondGradeList1.length)];
+    wordToGuess = newWord;
+    console.log(newWord)
+    shuffle(newWord);
+});
+//submits input
+submit.addEventListener("click", ()=>{
+    let userGuess = userInput.value;
+    //convert both to uppercase for compare
+    userGuess = userGuess.toUpperCase();
+    wordToGuess = wordToGuess.toUpperCase();
+    userInput.value = "";
+    if(userGuess === wordToGuess){
+        //add points, display correct indication. Maybe a green text under "score" with "+100" or something
+        newButton.click(true); //triggers click event for new word
+        console.log("correct")
+    }
+    else{
+        //take away points, show indication. Maybe shake scrambled word, red text under "score" "-50" or something.
+        console.log("nope")
+    }
+})
 //main game logic
 
 //local storage function for scores
@@ -53,7 +80,6 @@ function updateHighScore(userScore){
 }
 //events to run when DOM loaded
 document.addEventListener("DOMContentLoaded", ()=>{
-
     //checks for previous high score, sets to 0 if none, sets highscore to stored highscore otherwise.
     if(localStorage.length == 0){
         localStorage.setItem("userHighScore", 0);

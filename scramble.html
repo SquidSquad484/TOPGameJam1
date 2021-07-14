@@ -1,0 +1,42 @@
+<!--The Odin Project -- Game Jam 2021
+    SquidSquad
+    coderlore
+    iketaco
+    AqueousOtter
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="./styles/gameStyles.css">
+
+        <title>Space Scramble</title>
+    </head>
+    <body>
+        <div class="stars"></div>
+        <div class="twinkle"></div>
+        <nav>
+            <p><a href="index.html">Main Menu</a></p>
+            <p id="scoreDisplay">Score: </p>
+            <p id="hint">Hint</p>
+        </nav>
+        <div class="main">
+        <div class="wordDisplay">
+            <p id="letterDisplay"> </p>
+        </div>
+        <input type="text" id="userInput" name="userInput">
+        <button id="submit">Submit</button>
+        <br>
+        <button id="new">New Word</button> <!--For testing-->
+        </div>
+        <div id="player">
+            <audio autoplay hidden>
+                <source src="music/spacemusic.mp3" type="audio/mpeg">
+            </audio>
+        </div>        
+        <script src="./scripts.js"></script>
+    </body>
+</html>

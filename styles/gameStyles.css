@@ -1,0 +1,57 @@
+/*The Odin Project -- Game Jam 2021
+    SquidSquad
+    coderlore
+    iketaco
+    AqueousOtter
+*/
+
+/* Game Specific Styling */
+
+nav {
+    margin: auto;
+    position: absolute;
+    color: white;
+    font-family: GalaxyReg;
+    font-size: xxx-large;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+nav p{
+    flex: 1;
+    text-align: center;
+    margin: 0.1em 0;
+    padding: 0.25em;
+}
+input {
+    border: none;
+    border-bottom: 2px white solid;
+    padding: 8px;
+    background-color: transparent;
+    color: white;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: x-large;
+    outline: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    color: #7851a9;
+}
+html {
+    cursor: url('http://www.rw-designer.com/cursor-extern.php?id=144156'), move;
+}
+.wordDisplay {
+    letter-spacing: 15px;
+    padding: .5em;
+    margin: 4em auto 1.5em;
+    border-bottom: 2px solid white;
+}
+#new{
+    margin: 2em 0;
+}

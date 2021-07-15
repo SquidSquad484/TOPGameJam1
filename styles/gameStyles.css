@@ -6,7 +6,7 @@
 */
 
 /* Game Specific Styling */
-
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
 nav {
     margin: auto;
     position: absolute;
@@ -25,6 +25,9 @@ nav p{
     margin: 0.1em 0;
     padding: 0.25em;
 }
+.main {
+    top: 35%;
+}
 input {
     border: none;
     border-bottom: 2px white solid;
@@ -42,6 +45,10 @@ a {
 }
 a:hover {
     color: #7851a9;
+    cursor: url('http://www.rw-designer.com/cursor-extern.php?id=144153'), move;
+}
+button:hover{
+    cursor: url('http://www.rw-designer.com/cursor-extern.php?id=144153'), move;
 }
 html {
     cursor: url('http://www.rw-designer.com/cursor-extern.php?id=144156'), move;
@@ -51,6 +58,17 @@ html {
     padding: .5em;
     margin: 4em auto 1.5em;
     border-bottom: 2px solid white;
+}
+#scoreDisplay {
+    letter-spacing: 5px;
+}
+
+#highScoreDisplay {
+    font-family: 'Space Mono', monospace;
+    font-size: large;
+    padding-top: 3em;
+    text-align: center;
+    color: white;
 }
 #new{
     margin: 2em 0;

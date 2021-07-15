@@ -25,6 +25,7 @@ const shuffleDisplay = document.getElementById("letterDisplay");
 const newButton = document.getElementById("new"); //new word button
 const userInput = document.getElementById("userInput");
 const submit = document.getElementById("submit");
+const score = document.getElementById("scoreDisplay");
 let wordToGuess;
 
 //shuffles word
@@ -63,6 +64,12 @@ submit.addEventListener("click", ()=>{
         //add points, display correct indication. Maybe a green text under "score" with "+100" or something
         newButton.click(true); //triggers click event for new word
         console.log("correct")
+        userScore = 100; 
+        if (isNaN(score.innerHTML) || score.innerHTML === "") {
+            score.innerHTML = parseInt(userScore);
+        } else {
+            score.innerHTML = parseInt(userScore) + parseInt(score.innerHTML);
+        }
     }
     else{
         //take away points, show indication. Maybe shake scrambled word, red text under "score" "-50" or something.

@@ -75,6 +75,7 @@ submit.addEventListener("click", ()=>{
         userScore += 100; 
         score.innerText = "Score: " +userScore;
         updateHighScore(userScore);
+        addPointsUpEffect();
 /*         if (isNaN(score.innerHTML) || score.innerHTML === "") {
             score.innerHTML = parseInt(userScore);
         } else {
@@ -85,9 +86,21 @@ submit.addEventListener("click", ()=>{
         //take away points, show indication. Maybe shake scrambled word, red text under "score" "-50" or something.
         userScore -= 50;
         score.innerText = "Score: " + userScore;
-
+        addPointsDownEffect();
     }
 });
+
+//makes green for 1 second then reverts to white
+function addPointsUpEffect() {
+    score.style.color = "green";
+    setTimeout(function() {score.style.color = "white"}, 1000);
+}
+
+//makes red for 1 second then reverts to white
+function addPointsDownEffect() {
+    score.style.color = "red";
+    setTimeout(function() {score.style.color = "white"}, 1000);
+}
 
 //main game logic
 

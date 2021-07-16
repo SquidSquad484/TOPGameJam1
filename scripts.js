@@ -53,6 +53,9 @@ newButton.addEventListener("click", () =>{
     wordToGuess = newWord;
     console.log(newWord)
     shuffle(newWord);
+    if (shuffleDisplay.innerHTML === wordToGuess) {
+        shuffle(newWord); //shuffles word again if it is same as original word
+    }
 });
 
 //allows enter key to be used

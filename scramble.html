@@ -19,13 +19,19 @@
         <div class="stars"></div>
         <div class="twinkle"></div>
         <nav>
-            <p><a href="index.html">Main Menu</a></p>
-            <p id="scoreDisplay">Score: 0</p> 
-            <p id="hint">Hint</p>
+            <!--Divs so content can be stacked without messing up flex-->
+            <div>
+                <p><a href="index.html">Main Menu</a></p>
+            </div>
+            <div>
+                <p id="scoreDisplay">Score: 0</p> 
+                <p id="highScoreDisplay">HighScore: </p>
+            </div>
+            <div>
+                <!--Add Timer here-->
+            </div>
         </nav> 
-
         <div class="main">
-            <p id="highScoreDisplay">HighScore: </p>
         <div class="wordDisplay">
             <p id="letterDisplay"> </p>
         </div>
@@ -33,12 +39,22 @@
         <button type="submit" id="submit">Submit</button>
         <br>
         <button id="new">New Word</button> <!--For testing-->
+        <button class="hide" id="reset">Reset</button>
         </div>
         <div id="player">
             <audio autoplay hidden>
                 <source src="music/spacemusic.mp3" type="audio/mpeg">
             </audio>
         </div>        
-        <script src="./scripts.js"></script>
+        <audio id="clickSound">
+            <source src="sounds/click.wav" type="audio/mpeg"/>
+        </audio>
+        <audio id="correct">
+            <source src="sounds/correct.wav" type="audio/mpeg">
+        </audio>
+        <audio id="incorrect">
+            <source src="./sounds/wrong1.wav" type="audio/mpeg">
+        </audio>
+        <script src="./scripts/scramble.js"></script>
     </body>
 </html>

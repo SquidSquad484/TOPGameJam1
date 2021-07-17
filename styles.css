@@ -86,3 +86,7 @@ button:hover {
 #letterDisplay {
     font-family: Arial, Helvetica, sans-serif;
 }
+/* For hiding elements */
+.hide {
+    display: none;
+}

@@ -63,6 +63,7 @@ function inputCheck(userGuess, wordToGuess){
         let index = guessList.indexOf(wordToGuess);
         guessList.splice(index,1);
         gameFinished(guessList);
+        timeLeft += 5;
     }
     else{
         //take away points, show indication. Maybe shake scrambled word, red text under "score" "-50" or something.
@@ -144,3 +145,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
         highScoreDisplay.innerText = "HighScore: " + highScore;
     }
 })
+
+//countdown timer set to 60 sec for the round
+let timeLeft = 60;
+countdown = document.getElementById("countdown");
+let timer = setInterval(function() {
+    if (timeLeft <= 0) {
+        clearInterval(timer);
+        countdown.innerText = "Time is up!";
+    } else {
+        if (timeLeft <= 10) {
+            countdown.style.color = "red";
+            countdown.innerText = "Time left: " + timeLeft;
+        } else {
+            countdown.style.color = "white";
+            countdown.innerText = "Time left: " + timeLeft;
+        }
+    }
+    timeLeft -= 1;
+}, 1000);

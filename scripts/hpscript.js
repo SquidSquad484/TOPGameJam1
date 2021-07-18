@@ -7,11 +7,12 @@
     HomePage Script
 */
 
-let gamemode = "Word Scramble";
-let grademode = "Pre-K";
-let musicvar = "on";
+//localStorage variables that can be accessed anywhere throughout the site
+localStorage.gamemode = "Word Scramble";
+localStorage.grademode = "Pre-K";
+localStorage.musicvar = "on";
 
-//For HomePage, switching between Modes and Grade Level
+//Switching between Modes and Grade Level
 let modebutton = document.getElementById('modebutton');
 let mainoverlay = document.getElementById('options');
 let modes = document.getElementById('modesoptions');
@@ -48,38 +49,40 @@ backbutton2.addEventListener('click', function() {
     grades.style.display = 'none';
 }, false);
 
+//Selecting and changing localStorage variables for Mode and Grade 
 function gamehighlight(){
-    document.getElementById(gamemode).style.backgroundColor="white";
-    document.getElementById(gamemode).style.color="black";
+    document.getElementById(localStorage.getItem('gamemode')).style.backgroundColor="white";
+    document.getElementById(localStorage.getItem('gamemode')).style.color="black";
 }
 
 function gradehighlight(){
-    document.getElementById(grademode).style.backgroundColor="white";
-    document.getElementById(grademode).style.color="black";
+    document.getElementById(localStorage.getItem('grademode')).style.backgroundColor="white";
+    document.getElementById(localStorage.getItem('grademode')).style.color="black";
 }
 
 function mode(currentID){
-    if (currentID !== gamemode){
+    if (currentID !== localStorage.getItem('gamemode')){
         document.getElementById(currentID).style.backgroundColor="white";
         document.getElementById(currentID).style.color="black";
-        document.getElementById(gamemode).style.backgroundColor="black";
-        document.getElementById(gamemode).style.color="white";
+        document.getElementById(localStorage.getItem('gamemode')).style.backgroundColor="black";
+        document.getElementById(localStorage.getItem('gamemode')).style.color="white";
     }
-    gamemode = currentID;
-    document.getElementById("modesetting").textContent="Mode: " + gamemode;
+    localStorage.setItem("gamemode", currentID);
+    document.getElementById("modesetting").textContent="Mode: " + localStorage.getItem('gamemode');
 }
 
 function gradelevel(currentID){
-    if (currentID !== grademode){
+    if (currentID !== localStorage.getItem('grademode')){
         document.getElementById(currentID).style.backgroundColor="white";
         document.getElementById(currentID).style.color="black";
-        document.getElementById(grademode).style.backgroundColor="black";
-        document.getElementById(grademode).style.color="white";
+        document.getElementById(localStorage.getItem('grademode')).style.backgroundColor="black";
+        document.getElementById(localStorage.getItem('grademode')).style.color="white";
     }
-    grademode = currentID;
-    document.getElementById("gradesetting").textContent="Grade: " + grademode;
+    localStorage.setItem('grademode', currentID);
+    document.getElementById("gradesetting").textContent="Grade: " + localStorage.getItem('grademode');
 }
 
+//Displaying Rules and Login
 function rulesdisplay(){
     document.getElementById("main").style.display="none";
     document.getElementById("footervalues").style.display="none";

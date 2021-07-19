@@ -40,6 +40,9 @@ guessList = difficulty;
 const subtractedPoints = document.getElementById("subtracted-points");
 const addedPoints = document.getElementById("added-points");
 
+const subtractedPoints = document.getElementById("subtracted-points");
+const addedPoints = document.getElementById("added-points");
+
 //shuffles word
 function shuffle(word) {
     let wordArr = [];

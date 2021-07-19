@@ -37,6 +37,9 @@ const incorrect = document.getElementById("incorrect");
 guessList = difficulty;
 
 
+const subtractedPoints = document.getElementById("subtracted-points");
+const addedPoints = document.getElementById("added-points");
+
 //shuffles word
 function shuffle(word) {
     let wordArr = [];
@@ -140,13 +143,14 @@ submit.addEventListener("click", ()=>{
         score.innerText = "Score: " +userScore;
         updateHighScore(userScore);
         addPointsUpEffect();
+        secondGradeList1.splice(wordToGuess, 1);
 /*         if (isNaN(score.innerHTML) || score.innerHTML === "") {
             score.innerHTML = parseInt(userScore);
         } else {
             score.innerHTML = parseInt(userScore) + parseInt(score.innerHTML);
         } */
     }
-    else{
+    else {
         //take away points, show indication. Maybe shake scrambled word, red text under "score" "-50" or something.
         userScore -= 50;
         score.innerText = "Score: " + userScore;
@@ -173,6 +177,7 @@ function addPointsDownEffect() {
     score.style.color = "red";
     setTimeout(function() {score.style.color = "white"}, 1000);
 }
+
 
 //main game logic
 

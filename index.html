@@ -72,11 +72,12 @@
             <button class="backbutton" onclick="backwards()"><< Back</button>
             <h1>Login | Sign Up</h1>
             <form>
-                <input type="text" id="name" name="name" placeholder="Name">
-                <input type="text" id="name" name="name" placeholder="Username">
-                <input type="text" id="name" name="name" placeholder="Email Address">
-                <input type="text" id="name" name="name" placeholder="Password">
-                <button id="submit">Submit</button>
+                <input type="text" id="full_name" placeholder="Name">
+                <input type="text" id="username" placeholder="Username">
+                <input type="email" id="email" placeholder="Email Address">
+                <input type="password" id="password" placeholder="Password">
+                <button id="register" onclick="register_acc(); return false;">Register</button>
+                <button id="login_button" onclick="login(); return false;">Login</button>
             </form>
         </div>
         <footer id="footervalues">
@@ -89,7 +90,13 @@
         <audio autoplay loop id="backgroundsound">
             <source src="../music/spacemusic.mp3" type="audio/mpeg">
         </audio> 
-        <script src="./scripts.js"></script>
+        <script src="scripts.js"></script>
         <script src="scripts/hpscript.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+        <script src="scripts/app.js"></script>
     </body>
 </html>

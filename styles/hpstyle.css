@@ -96,7 +96,7 @@ button {
     width: 100%;
 }
 
-#options button:hover, #modesoptions button:hover, #gradeoptions button:hover, .backbutton:hover, #submit:hover{
+#options button:hover, #modesoptions button:hover, #gradeoptions button:hover, .backbutton:hover, #register:hover, #login_button:hover{
     background-color: white !important;
     color: black !important; 
 }
@@ -235,10 +235,14 @@ input {
     color: rgb(207, 207, 207);
 }
 
-#submit {
+#register {
     margin-top: 40px;
     width: 50%;
+}
 
+#login_button {
+    margin-top: 40px;
+    width: 50%;
 }
 
 input:focus {

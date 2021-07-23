@@ -17,32 +17,49 @@ const database = firebase.database()
 
 function register_acc() {
     // Get all our input fields
-    email = document.getElementById('email').value
-    password = document.getElementById('password').value
-    full_name = document.getElementById('full_name').value
-    username = document.getElementById('username').value
+    document.getElementById("nameError").style.display="none";
+    document.getElementById("usernameError").style.display="none";
+    document.getElementById("emailError").style.display="none";
+    document.getElementById("passwordError").style.display="none";
+    document.getElementById("emailUseError").style.display="none";
 
+    let email = document.getElementById('email').value
+    let password = document.getElementById('password').value
+    let full_name = document.getElementById('full_name').value
+    let username = document.getElementById('username').value
+
+    let exit = false;
     // Validate input fields
-    if (validate_email(email) == false || validate_password(password) == false) {
-        alert('Email or Password is Outta Line!!')
-        return
-        // Don't continue running the code
+    if (validate_field(full_name) == false) {
+        document.getElementById("nameError").style.display="block";
+        exit = true;
     }
-    if (validate_field(full_name) == false || validate_field(username) == false) {
-        alert('One or More Extra Fields is Outta Line!!')
+    if (validate_field(username) == false) {
+        document.getElementById("usernameError").style.display="block";
+        exit = true;
+    }
+    if (validate_email(email) == false) {
+        document.getElementById("emailError").style.display="block";
+        exit = true;
+    }
+    if (validate_password(password) == false) {
+        document.getElementById("passwordError").style.display="block";
+        exit = true;
+    }
+    if (exit == true) {
         return
     }
     // Move on with Auth
     auth.createUserWithEmailAndPassword(email, password)
     .then(function() {
         // Declare user variable
-        var user = auth.currentUser
+        let user = auth.currentUser
 
         // Add this user to Firebase Database
-        var database_ref = database.ref()
+        let database_ref = database.ref()
 
         // Create User data
-        var user_data = {
+        let user_data = {
         email : email,
         full_name : full_name,
         username : username,
@@ -53,34 +70,29 @@ function register_acc() {
         database_ref.child('users/' + user.uid).set(user_data)
 
         // DOne
-        alert('User Created!!')
+        alert('User Created')
     })
-    .catch(e => console.log(e.message));
+    .catch(function() {
+        document.getElementById("emailUseError").style.display="block";
+    });
 }
 
 // Set up our login function
 function login () {
     // Get all our input fields
-    email = document.getElementById('email').value
-    password = document.getElementById('password').value
-
-    // Validate input fields
-    if (validate_email(email) == false || validate_password(password) == false) {
-        alert('Email or Password is Outta Line!!')
-        return
-        // Don't continue running the code
-    }
+    let email = document.getElementById('email').value
+    let password = document.getElementById('password').value
 
     auth.signInWithEmailAndPassword(email, password)
     .then(function() {
         // Declare user variable
-        var user = auth.currentUser
+        let user = auth.currentUser
 
         // Add this user to Firebase Database
-        var database_ref = database.ref()
+        let database_ref = database.ref()
 
         // Create User data
-        var user_data = {
+        let user_data = {
         last_login : Date.now()
         }
 
@@ -91,7 +103,17 @@ function login () {
         alert('User Logged In!!')
 
     })
-    .catch(e => console.log(e.message));
+    .catch(function() {
+            if (document.getElementById("incorrectInfo").style.display == "none") {
+                document.getElementById("incorrectInfo").style.display="block";
+                document.getElementById("incorrectInfo2").style.display="none";
+            } else {
+                document.getElementById("incorrectInfo2").style.display="block";
+                document.getElementById("incorrectInfo").style.display="none";
+            }
+            return
+        }
+    );
 }
 
 // Validate Functions

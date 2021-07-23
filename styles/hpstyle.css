@@ -248,3 +248,52 @@ input {
 input:focus {
     outline-width: 0;
 }
+
+.signup {
+    display: block;
+}
+
+#login_button {
+    display: none;
+}
+
+#switchacc {
+    margin-top: 25px;
+}
+
+#changeLink:hover {
+    color: #b9b9b9;
+}
+
+#nameError {
+    display: none;
+}
+
+#usernameError {
+    display: none;
+}
+
+#emailError {
+    display: none;
+}
+
+#passwordError {
+    display: none;
+}
+
+#emailUseError {
+    display: none;
+}
+
+#error {
+    margin-top: 25px;
+    color: #ff5858;
+}
+
+#incorrectInfo {
+    display: none;
+}
+
+#incorrectInfo2 {
+    display: none;
+}

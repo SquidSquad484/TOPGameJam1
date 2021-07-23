@@ -70,13 +70,24 @@
         </div>
         <div id="login">
             <button class="backbutton" onclick="backwards()"><< Back</button>
-            <h1>Login | Sign Up</h1>
+            <h1 id="loginHeader">Sign Up</h1>
             <form>
-                <input type="text" id="full_name" placeholder="Name">
-                <input type="text" id="username" placeholder="Username">
+                <input class="signup" type="text" id="full_name" placeholder="Name">
+                <input class="signup" type="text" id="username" placeholder="Username">
                 <input type="email" id="email" placeholder="Email Address">
                 <input type="password" id="password" placeholder="Password">
-                <button id="register" onclick="register_acc(); return false;">Register</button>
+                <ul id="error">
+                    <li id="incorrectInfo">Please try again.</li>
+                    <li id="incorrectInfo2">Email or Password is Incorrect.</li>
+                    <li id="nameError">Please fill in the Name field.</li>
+                    <li id="usernameError">Please fill in the Username field.</li>
+                    <li id="emailError">Email is in the incorrect format.</li>
+                    <li id="passwordError">Password needs to be 6 or more in length.</li>
+                    <li id="emailUseError">This email is already being used.</li>
+                </ul>
+
+                <p id="switchacc">Already have an account? <a id="changeLink" onclick='loginForm()'>Login</a></p>
+                <button class="signup" id="register" onclick="register_acc(); return false;">Register</button>
                 <button id="login_button" onclick="login(); return false;">Login</button>
             </form>
         </div>

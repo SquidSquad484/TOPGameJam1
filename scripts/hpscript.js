@@ -109,3 +109,34 @@ function backwards(){
     document.getElementById("rules").style.display="none";
     document.getElementById("login").style.display="none";
 }
+
+// Login and Sign Up Page
+
+function loginForm() {
+    document.getElementById("loginHeader").innerHTML = "Login";
+    let signup_class = document.getElementsByClassName("signup");
+    for (let i = 0; i < signup_class.length; i++) {
+        signup_class[i].style.display="none";
+    }
+    document.getElementById("switchacc").innerHTML = "Don't Have An Account? <a id='changeLink' onclick='registerForm()'>Create One</a>";
+    document.getElementById("login_button").style.display="block";
+
+    document.getElementById("nameError").style.display="none";
+    document.getElementById("usernameError").style.display="none";
+    document.getElementById("emailError").style.display="none";
+    document.getElementById("passwordError").style.display="none";
+    document.getElementById("emailUseError").style.display="none";
+}
+
+function registerForm() {
+    document.getElementById("loginHeader").innerHTML = "Sign Up";
+    let signup_class = document.getElementsByClassName("signup");
+    for (let i = 0; i < signup_class.length; i++) {
+        signup_class[i].style.display="block";
+    }
+    document.getElementById("switchacc").innerHTML = "Already have an account? <a id='changeLink' onclick='loginForm()'>Login</a>";
+    document.getElementById("login_button").style.display="none";
+
+    document.getElementById("incorrectInfo").style.display="none";
+    document.getElementById("incorrectInfo2").style.display="none";
+}

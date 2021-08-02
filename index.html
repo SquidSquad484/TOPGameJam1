@@ -11,6 +11,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="styles/hpstyle.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
         <title>Space Scramble</title>
     </head>
     <body>
@@ -18,8 +20,9 @@
         <div class="twinkle"></div>
         <header id="headermenu">
             <nav id="left">
-                <img src="../images/start.png" alt="Music Start" width="38" height="38" id="player" onclick="music()">
-                <img src="../images/pause.png" alt="Music Stop" width="38" height="38" id="pauser" onclick="music()">
+                <span class="material-icons md-36" alt="Music Start" id="player" onclick="music()">volume_up</span>
+                <span class="material-icons md-36" alt="Music Stop" id="pauser" onclick="music()">volume_off</span>
+                <!-- Change Music Control Button to Volume On/Off Symbol -->
             </nav>
             <nav id="right">
                 <button class="menutext"; onclick="logindisplay()">Login | Sign Up</button>

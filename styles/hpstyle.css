@@ -44,6 +44,11 @@ header {
     list-style-type: none;
 }
 
+.material-icons.md-36 {
+    color: white;
+    font-size: 36px;
+}
+
 .menutext {
     border: none;
 }

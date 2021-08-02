@@ -7,7 +7,7 @@
 
 /* Game Specific Styling */
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
-#main-navigation {
+nav {
     margin: auto;
     position: absolute;
     color: white;
@@ -19,7 +19,7 @@
     flex-direction: row;
     width: 100%;
 }
-#main-navigation p{
+nav p{
     flex: 1;
     text-align: center;
     margin: 0.1em 0;
@@ -38,15 +38,6 @@ input {
     text-align: center;
     font-size: x-large;
     outline: none;
-}
-#main-menu {
-    margin: auto;
-    position: absolute;
-    font-family: GalaxyReg;
-    font-size: xx-large;
-    display: flex;
-    margin-left: 0;
-    padding: 0.8em 0.3em 0.3em 0.5em;
 }
 a {
     text-decoration: none;

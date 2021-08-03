@@ -70,7 +70,8 @@ function register_acc() {
         database_ref.child('users/' + user.uid).set(user_data)
 
         // DOne
-        alert('User Created')
+        document.getElementById("loggedinsuccess").style.display = "block";
+        window.location.reload();
     })
     .catch(function() {
         document.getElementById("emailUseError").style.display="block";
@@ -99,9 +100,9 @@ function login () {
         // Push to Firebase Database
         database_ref.child('users/' + user.uid).update(user_data)
 
-        // DOne
-        alert('User Logged In!!')
-
+        // Done
+        document.getElementById("loggedinsuccess").style.display = "block";
+        window.location.reload();
     })
     .catch(function() {
             if (document.getElementById("incorrectInfo").style.display == "none") {
@@ -149,7 +150,20 @@ function validate_field(field) {
     }
 }
 
+function signout_button() {
+    auth.signOut();
+    document.getElementById("loggedinsuccess").style.display = "none";
+}
 
-
-
+// Realtime listener to check if user is logged in
+auth.onAuthStateChanged(firebaseUser => {
+    if(firebaseUser) {
+        document.getElementById("headeright").innerHTML = "Sign Out";
+        document.getElementById("headeright").onclick = signout_button;
+    }
+    else {
+        document.getElementById("headeright").innerHTML = "Login | Sign Up";
+        document.getElementById("headeright").onclick = logindisplay;
+    }
+})
 

@@ -54,8 +54,7 @@ header {
 }
 
 .menutext:hover {
-    font-family: Temphis;
-    font-size: x-large;
+    color: #b9b9b9;
 }
 
 #main {
@@ -300,5 +299,11 @@ input:focus {
 }
 
 #incorrectInfo2 {
+    display: none;
+}
+
+#loggedinsuccess {
+    color: green;
+    list-style-type: none;
     display: none;
 }

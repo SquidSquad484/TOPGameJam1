@@ -70,6 +70,23 @@ html {
     text-align: center;
     color: white;
 }
+
+@media (max-width: 3500px) and (min-width: 2000px) {
+    #highScoreDisplay {
+        padding-top: 0.8em;
+    }
+}
+
+@media (max-width: 1500px) {
+    #highScoreDisplay {
+        padding-top: 3em;
+        line-height: 20px;
+        position: absolute;
+        padding-left: 35%;
+        padding-right: 35%;
+    }
+}
+
 #new{
     margin: 2em 0;
 }

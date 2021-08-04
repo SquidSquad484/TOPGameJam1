@@ -19,7 +19,6 @@ const fourthGradeList1 = ["accurate", "extraordinary", "peculiar", "astronaut", 
 let userScore =0;
 let highScore = 0; 
 
-
 //main game functions
 const shuffleDisplay = document.getElementById("letterDisplay");
 const newButton = document.getElementById("new"); //new word button
@@ -28,6 +27,23 @@ const submit = document.getElementById("submit");
 const score = document.getElementById("scoreDisplay");
 const highScoreDisplay = document.getElementById("highScoreDisplay");
 let wordToGuess;
+let timeLeft = 60;
+countdown = document.getElementById("countdown");
+let timer = setInterval(function() {
+    if (timeLeft <=0) {
+        clearInterval(timer);
+        countdown.innerText = "Time is up!";
+    } else {
+        if (timeLeft <= 10) {
+            countdown.style.color = "red";
+            countdown.innerText = "Time left: " + timeLeft;
+        } else {
+            countdown.style.color = "white";
+            countdown.innerText = "Time left: " + timeLeft;
+        }
+    }
+    timeLeft -= 1;
+}, 1000);
 
 //shuffles word
 function shuffle(word) {
@@ -77,6 +93,7 @@ submit.addEventListener("click", ()=>{
         newButton.click(true); //triggers click event for new word
         userScore += 100; 
         score.innerText = "Score: " +userScore;
+        timeLeft += 5;
         updateHighScore(userScore);
         addPointsUpEffect();
 /*         if (isNaN(score.innerHTML) || score.innerHTML === "") {

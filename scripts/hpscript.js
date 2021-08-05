@@ -88,6 +88,7 @@ function rulesdisplay(){
     document.getElementById("footervalues").style.display="none";
     document.getElementById("login").style.display="none";
     document.getElementById("headermenu").style.display="none";
+    document.getElementById("shop").style.display="none";
 
     document.getElementById("rules").style.display="block";
 }
@@ -97,15 +98,26 @@ function logindisplay(){
     document.getElementById("footervalues").style.display="none";
     document.getElementById("rules").style.display="none";
     document.getElementById("headermenu").style.display="none";
+    document.getElementById("shop").style.display="none";
 
     document.getElementById("login").style.display="block";
+}
+
+function shop(){
+    document.getElementById("main").style.display="none";
+    document.getElementById("footervalues").style.display="none";
+    document.getElementById("rules").style.display="none";
+    document.getElementById("headermenu").style.display="none";
+
+    document.getElementById("shop").style.display="block";
 }
 
 function backwards(){
     document.getElementById("main").style.display="block";
     document.getElementById("footervalues").style.display="block";
     document.getElementById("headermenu").style.display="flex";
-
+    
+    document.getElementById("shop").style.display="none";
     document.getElementById("rules").style.display="none";
     document.getElementById("login").style.display="none";
 }

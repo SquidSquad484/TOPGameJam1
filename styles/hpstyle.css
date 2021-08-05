@@ -167,7 +167,7 @@ footer ul {
 }
 
 
-#rules {
+#rules, #shop {
     position: absolute;
     display: none;
     left: 50%;
@@ -306,4 +306,9 @@ input:focus {
     color: green;
     list-style-type: none;
     display: none;
+}
+
+#shop {
+    font-family: Orbitron;
+    font-size: large;
 }

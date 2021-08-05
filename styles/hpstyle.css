@@ -100,7 +100,7 @@ button {
     width: 100%;
 }
 
-#options button:hover, #modesoptions button:hover, #gradeoptions button:hover, .backbutton:hover, #register:hover, #login_button:hover{
+#options button:hover, #modesoptions button:hover, #gradeoptions button:hover, .backbutton:hover, #register:hover, #login_button:hover, #wordList button:hover{
     background-color: white !important;
     color: black !important; 
 }
@@ -311,4 +311,52 @@ input:focus {
 #shop {
     font-family: Orbitron;
     font-size: large;
+}
+
+#wordList {
+    display: none;
+    font-family: Orbitron;
+    font-size: x-large;
+}
+
+#intructWord {
+    margin: 30px;
+}
+
+textarea {
+    background: transparent;
+    color: white;
+    font-family: Orbitron;
+    padding: 5px;
+    font-size: medium;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+#wordSubmit {
+    width: 50% !important; 
+    margin-top: 20px;
+}
+
+#wordList li {
+    list-style-type: none;
+    font-size: large;
+    display: none;
+    margin-top: 20px;
+}
+
+#wordError {
+    display: none;
+    color: #ff5858;
+}
+
+#wordSuccess {
+    display: none;
+    color: green;
+}
+
+#back3 {
+    width: 20% !important;
 }

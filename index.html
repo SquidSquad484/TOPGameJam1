@@ -59,6 +59,18 @@
                 <button id="1-2"; onclick="gradelevel(this.id)">1-2</button>
                 <button id="3-4"; onclick="gradelevel(this.id)">3-4</button>
                 <button id="5-6"; onclick="gradelevel(this.id)">5-6</button>
+                <button id="Custom List"; onclick="wordLis()">Custom List</button>
+            </div>
+
+            <div id="wordList">
+                <button id="back3"><< Back</button>
+                <p id="intructWord">Enter in your custom word list below. Please separate words by commas (,).</p>
+                <form id="wordListForm">
+                    <textarea id="textWords" rows="10" cols="50"></textarea>
+                    <button id="wordSubmit" onclick="wordAdd(document.getElementById('textWords').value); return false">Submit</button>
+                </form>
+                <li id="WordError">Error - custom list not added.</li>
+                <li id="WordSuccess">Success - custom list added!</li>
             </div>
         </div>
         <div id="rules">

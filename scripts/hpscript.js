@@ -11,6 +11,7 @@
 localStorage.gamemode = "Word Scramble";
 localStorage.grademode = "Pre-K";
 localStorage.musicvar = "on";
+localStorage.customList = false;
 
 //Switching between Modes and Grade Level
 let modebutton = document.getElementById('modebutton');
@@ -21,6 +22,7 @@ let backbutton1 = document.getElementById('back1');
 let gradesbutton = document.getElementById('gradebutton');
 let grades = document.getElementById('gradeoptions');
 let backbutton2 = document.getElementById('back2');
+let backbutton3 = document.getElementById('back3');
 
 let modetext = document.getElementById('modesetting');
 let gradetext = document.getElementById('gradesetting');
@@ -47,6 +49,11 @@ backbutton2.addEventListener('click', function() {
     mainoverlay.style.display = 'block';
     modetext.style.display = 'block';
     grades.style.display = 'none';
+}, false);
+
+backbutton3.addEventListener('click', function() {
+    document.getElementById("gradeoptions").style.display="block";
+    document.getElementById("wordList").style.display="none";
 }, false);
 
 //Selecting and changing localStorage variables for Mode and Grade 
@@ -80,6 +87,11 @@ function gradelevel(currentID){
     }
     localStorage.setItem('grademode', currentID);
     document.getElementById("gradesetting").textContent="Grade: " + localStorage.getItem('grademode');
+}
+
+function wordLis() {
+    document.getElementById("gradeoptions").style.display="none";
+    document.getElementById("wordList").style.display="block";
 }
 
 //Displaying Rules and Login
@@ -151,4 +163,29 @@ function registerForm() {
 
     document.getElementById("incorrectInfo").style.display="none";
     document.getElementById("incorrectInfo2").style.display="none";
+}
+
+function wordAdd(string_text){
+    if (string_text) {
+        arr = string_text.split(",");
+        arr = arr.filter(function(entry) { return entry.trim() != ''; })
+
+        if (arr.length > 1) {
+            localStorage.customList = arr;
+
+            gradelevel("Custom List")
+
+            document.getElementById("WordError").style.display="none";
+            document.getElementById("WordSuccess").style.display="block";
+            document.getElementById("WordSuccess").style.color="green";  
+        } else {
+            document.getElementById("WordError").style.display="block";
+            document.getElementById("WordError").style.color="#ff5858";
+            document.getElementById("WordSuccess").style.display="none";    
+        }
+    } else {
+        document.getElementById("WordError").style.display="block";
+        document.getElementById("WordError").style.color="#ff5858";
+        document.getElementById("WordSuccess").style.display="none";    
+    }
 }

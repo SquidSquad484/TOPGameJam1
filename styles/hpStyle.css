@@ -1,0 +1,362 @@
+/* Makes sure background takes up entire screen*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face { 
+    font-family: GalaxyReg; 
+    src: url('../fonts/CyberwayRiders-lg97d.ttf'); 
+} 
+
+@font-face { 
+    font-family: Orbitron; 
+    src: url('../fonts/Orbitron-SemiBold.ttf'); 
+} 
+
+@font-face { 
+    font-family: Temphis; 
+    src: url('../fonts/temphis.sweatermonkey.ttf'); 
+} 
+
+@font-face { 
+    font-family: Roboto; 
+    src: url('../fonts/Roboto-Regular.ttf'); 
+} 
+
+#left {
+    display: flex;
+    width: 50%;
+}
+#right {
+    width: 50%;
+    text-align: right;
+}
+
+header {
+    height: 50%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 30px;
+    list-style-type: none;
+}
+
+.material-icons.md-36 {
+    color: white;
+    font-size: 36px;
+}
+
+.menutext {
+    border: none;
+}
+
+.menutext:hover {
+    color: #b9b9b9;
+}
+
+#main {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: GalaxyReg;
+    font-size: xxx-large;
+    text-align: center;
+    display: block;
+}
+
+.currentsettings {
+    font-family: Orbitron;
+    font-size: 10px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+#options, #modesoptions, #gradeoptions{
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+button {
+    margin: 5px;
+    padding: 5px;
+    font-size: large;
+    border-radius: 30px;
+    font-family: Orbitron;
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+}
+
+#main button {
+    width: 100%;
+}
+
+#options button:hover, #modesoptions button:hover, #gradeoptions button:hover, .backbutton:hover, #register:hover, #login_button:hover, #wordList button:hover{
+    background-color: white !important;
+    color: black !important; 
+}
+
+@keyframes move-twinkle-back {
+    from {background-position: 0 0;}
+    to {background-position: -10000px 5000px}
+}
+
+/* Makes sure stars and twinkle takes up entire screen*/
+.stars, .twinkle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.stars {
+    background: black url(../images/stars.png) repeat top center;
+}
+
+.twinkle {
+    background: transparent url(../images/twinkling.png) repeat top center;
+    animation: move-twinkle-back 200s linear infinite;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: block;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 30px;
+    list-style-type: none;
+}
+
+#options {
+    display: block;
+}
+
+#modesoptions {
+    display: none;
+}
+
+#gradeoptions {
+    display: none;
+}
+
+#pauser {
+    display: none;
+}
+
+#player {
+    display: block;
+}
+
+
+#rules, #shop {
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
+
+}
+
+#rules h1 {
+    font-family: Orbitron;
+    font-size: xxx-large;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+
+#rules p {
+    font-family: Roboto;
+}
+
+.backbutton{
+    width: 20%;
+}
+
+#login {
+    color: white;
+    font-family: Orbitron;
+    font-size: large;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: none;
+    width: 50%;
+}
+
+#rules, #login {
+    max-height: 90vh;
+    overflow: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login h1 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+input {
+    font-family: Orbitron;
+    margin: 10px;
+    padding: 20px;
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+    border-radius: 30px;
+    width: 80%;
+}
+
+::placeholder {
+    color: rgb(207, 207, 207);
+}
+
+#register {
+    margin-top: 40px;
+    width: 50%;
+}
+
+#login_button {
+    margin-top: 40px;
+    width: 50%;
+}
+
+input:focus {
+    outline-width: 0;
+}
+
+.signup {
+    display: block;
+}
+
+#login_button {
+    display: none;
+}
+
+#switchacc {
+    margin-top: 25px;
+}
+
+#changeLink:hover {
+    color: #b9b9b9;
+}
+
+#nameError {
+    display: none;
+}
+
+#usernameError {
+    display: none;
+}
+
+#emailError {
+    display: none;
+}
+
+#passwordError {
+    display: none;
+}
+
+#emailUseError {
+    display: none;
+}
+
+#error {
+    margin-top: 25px;
+    color: #ff5858;
+}
+
+#incorrectInfo {
+    display: none;
+}
+
+#incorrectInfo2 {
+    display: none;
+}
+
+#loggedinsuccess {
+    color: green;
+    list-style-type: none;
+    display: none;
+}
+
+#shop {
+    font-family: Orbitron;
+    font-size: large;
+}
+
+#wordList {
+    display: none;
+    font-family: Orbitron;
+    font-size: x-large;
+}
+
+#intructWord {
+    margin: 30px;
+}
+
+textarea {
+    background: transparent;
+    color: white;
+    font-family: Orbitron;
+    padding: 5px;
+    font-size: medium;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+#wordSubmit {
+    width: 50% !important; 
+    margin-top: 20px;
+}
+
+#wordList li {
+    list-style-type: none;
+    font-size: large;
+    display: none;
+    margin-top: 20px;
+}
+
+#wordError {
+    display: none;
+    color: #ff5858;
+}
+
+#wordSuccess {
+    display: none;
+    color: green;
+}
+
+#back3 {
+    width: 20% !important;
+}

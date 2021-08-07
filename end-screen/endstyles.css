@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: black; 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@font-face { 
+    font-family: GalaxyReg; 
+    src: url('fonts/CyberwayRiders-lg97d.ttf'); 
+} 
+@font-face { 
+    font-family: Orbitron; 
+    src: url('fonts/Orbitron-SemiBold.ttf'); 
+} 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
+
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+    cursor: url('http://www.rw-designer.com/cursor-extern.php?id=144153'), move;
+}
+button:hover{
+    cursor: url('http://www.rw-designer.com/cursor-extern.php?id=144153'), move;
+}
+html {
+    cursor: url('http://www.rw-designer.com/cursor-extern.php?id=144156'), move;
+}
+
+button {
+    margin: 5px;
+    padding: 5px;
+    font-size: large;
+    border-radius: 30px;
+    font-family: Orbitron;
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+}
+button:hover {
+    background-color: white !important;
+    color: black !important; 
+}
+
+#statistics {
+    font-family: GalaxyReg;
+    font-size: xx-large;
+}

@@ -145,3 +145,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
         highScoreDisplay.innerText = "HighScore: " + highScore;
     }
 })
+
+// Turning music on or off
+function music(){
+    if (localStorage.getItem('musicvar') === "on"){
+        document.getElementById("backgroundsound").pause();
+        document.getElementById("pauser").style.display="block";
+        document.getElementById("player").style.display="none";
+        localStorage.setItem('musicvar', "off");
+    }
+    else {
+        document.getElementById("backgroundsound").play();
+        document.getElementById("player").style.display="block";
+        document.getElementById("pauser").style.display="none";
+        localStorage.setItem('musicvar', "on");
+    }
+}

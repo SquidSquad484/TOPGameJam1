@@ -1,0 +1,208 @@
+<!--The Odin Project -- Game Jam 2021
+    SquidSquad
+    coderlore
+    iketaco
+    AqueousOtter
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="styles/hpstyle.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+        <title>Space Scramble</title>
+    </head>
+    <body>
+        <div class="stars"></div>
+        <div class="twinkle"></div>
+        <header id="headermenu">
+            <nav id="left">
+                <span class="material-icons md-36" alt="Music Start" id="player" onclick="music()">volume_up</span>
+                <span class="material-icons md-36" alt="Music Stop" id="pauser" onclick="music()">volume_off</span>
+                <!-- Change Music Control Button to Volume On/Off Symbol -->
+            </nav>
+            <nav id="right">
+                <button id="headeright"; class="menutext"; onclick="logindisplay()">Login | Sign Up</button>
+            </nav>
+        </header>
+        <div id="main">
+            <div>
+                <h1>Space Scramble</h1>
+            </div>
+            <div class="currentsettings">
+                <h2 id="modesetting">A Word Scramble Game</h2>
+                <h2 id="gradesetting">Grade: Pre-K</h2>
+            </div>
+
+            <div class="mainoverlay"; id="options">
+                <form action="scramble.html">
+                    <button>Start Game</button>
+                </form>
+                <button onclick="rulesdisplay()">How to Play</button>
+                <!-- Moved How to Play Button to Top Because More Important -->
+                <button id="gradebutton"; onclick="gradehighlight()">Grade Level</button>
+            </div>
+
+            <div class="modes"; id="modesoptions">
+                <button id="back1"><< Back</button>
+                <button id="Word Scramble"; onclick="mode(this.id)">Word Scramble</button>
+                <button id="Math Scramble"; onclick="mode(this.id)">Math Scramble</button>
+            </div>
+
+            <div class="grades"; id="gradeoptions">
+                <button id="back2"><< Back</button>
+                <button id="Pre-K"; onclick="gradelevel(this.id)">Pre-K</button>
+                <button id="1-2"; onclick="gradelevel(this.id)">1-2</button>
+                <button id="3-4"; onclick="gradelevel(this.id)">3-4</button>
+                <button id="5-6"; onclick="gradelevel(this.id)">5-6</button>
+                <button id="Custom List"; onclick="wordLis()">Custom List</button>
+            </div>
+
+            <div id="wordList">
+                <button id="back3"><< Back</button>
+                <p id="intructWord">Enter in your custom word list below. Please separate words by commas (,).</p>
+                <form id="wordListForm">
+                    <textarea id="textWords" rows="10" cols="50"></textarea>
+                    <button id="wordSubmit" onclick="wordAdd(document.getElementById('textWords').value); return false">Submit</button>
+                </form>
+                <li id="WordError">Error - custom list not added.</li>
+                <li id="WordSuccess">Success - custom list added!</li>
+            </div>
+        </div>
+        <div id="rules">
+            <button class="backbutton" onclick="backwards()"><< Back</button>
+            <div id="rulesText">
+                <ol>
+                    <li>1. Click the <b>Sign Up</b> button and create an account.</li>
+                    <li>2. Click on the <b>Grade Level</b> button and choose your grade level. If you want a challenge, choose a higher grade level <em>at your own risk.</em> Or enter in your own custom word list!</li>
+                    <li>3. Check that the information under the title <b>Space Scramble</b> is correct. If so, press the <b>Start Game</b> button.</li>
+                    <li>4. Try and unscramble as many words as you can.</li>
+                    <li>5. Once the time is up, check your score and see if you made the leaderboard.</li>
+                </ol>                  
+            </div>
+        </div>
+        <!-- Added Instructions ^ -->
+        <div id="login">
+            <button class="backbutton" onclick="backwards()"><< Back</button>
+            <h1 id="loginHeader">Sign Up</h1>
+            <form>
+                <input class="signup" type="text" id="full_name" placeholder="Name">
+                <input class="signup" type="text" id="username" placeholder="Username">
+                <input type="email" id="email" placeholder="Email Address">
+                <input type="password" id="password" placeholder="Password">
+                <ul id="error">
+                    <li id="incorrectInfo">Please try again.</li>
+                    <li id="incorrectInfo2">Email or Password is Incorrect.</li>
+                    <li id="nameError">Please fill in the Name field.</li>
+                    <li id="usernameError">Please fill in the Username field.</li>
+                    <li id="emailError">Email is in the incorrect format.</li>
+                    <li id="passwordError">Password needs to be 6 or more in length.</li>
+                    <li id="emailUseError">This email is already being used.</li>
+                    <li id="loggedinsuccess">Successfully Logged In!</li>
+                </ul>
+                <p id="switchacc">Already have an account? <a id="changeLink" onclick='loginForm()'>Login</a></p>
+                <button class="signup" id="register" onclick="register_acc(); return false;">Register</button>
+                <button id="login_button" onclick="login(); return false;">Login</button>
+            </form>
+        </div>
+
+        <div id="leaderboards">
+            <button class="backbutton" onclick="backwards()"><< Back</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4">Leaderboards</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rank</td>
+                        <td>Username</td>
+                        <td>Grade Level</td>
+                        <td>Score</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>                        
+        </div>
+
+        <footer id="footervalues">
+            <ul>
+                <li><button class="menutext" onclick="leaders()">Leaderboards</button></li>
+            </ul>
+        </footer>
+        <audio autoplay loop id="backgroundsound">
+            <source src="../music/spacemusic.mp3" type="audio/mpeg">
+        </audio> 
+        <script src="scripts.js"></script>
+        <script src="scripts/hpscript.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+        <script src="scripts/app.js"></script>
+    </body>
+</html>

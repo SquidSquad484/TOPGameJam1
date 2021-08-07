@@ -360,3 +360,49 @@ textarea:focus {
 #back3 {
     width: 20% !important;
 }
+
+#leaderboards {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: Orbitron;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 40px;
+}
+  
+th, td {
+    width: 150px;
+    text-align: center;
+    border: 1px solid white;
+    padding: 5px;
+    color: white;
+}
+
+th {
+    background-color: white;
+    color: black;
+}
+
+h2 {
+    color: white;
+}
+
+#rulesText ol li {
+    display: inline-block;
+    margin-top: 20px;
+    font-family: Roboto !important;
+    list-style-type: decimal !important;
+    list-style-position: inside;
+    width: 50%;
+}
+
+#rulesText {
+    text-align: center;
+}

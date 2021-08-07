@@ -33,7 +33,7 @@
                 <h1>Space Scramble</h1>
             </div>
             <div class="currentsettings">
-                <h2 id="modesetting">Mode: Word Scramble</h2>
+                <h2 id="modesetting">A Word Scramble Game</h2>
                 <h2 id="gradesetting">Grade: Pre-K</h2>
             </div>
 
@@ -43,7 +43,6 @@
                 </form>
                 <button onclick="rulesdisplay()">How to Play</button>
                 <!-- Moved How to Play Button to Top Because More Important -->
-                <button id="modebutton"; onclick="gamehighlight()">Modes</button>
                 <button id="gradebutton"; onclick="gradehighlight()">Grade Level</button>
             </div>
 
@@ -75,19 +74,15 @@
         </div>
         <div id="rules">
             <button class="backbutton" onclick="backwards()"><< Back</button>
-            <p>0. Optional: Click the <b>Sign Up</b> button and create an account.</p>
-            <br>
-            <p>1. Click on the <b>Modes</b> button and choose a mode.</p>
-            <br>
-            <p>2. Click on the <b>Grade Level</b> button and choose your grade level. 
-            If you want a challenge, choose a higher grade level <em>at your own risk.</em></p>
-            <br>
-            <p>3. Check that the information under the title <b>Space Scramble</b> is correct. If so, press the
-            <b>Start Game</b> button.</p>
-            <br>
-            <p>Thanks for playing our game!</p>
-            <br>
-            <p><b>- The Devs</b></p>
+            <div id="rulesText">
+                <ol>
+                    <li>1. Click the <b>Sign Up</b> button and create an account.</li>
+                    <li>2. Click on the <b>Grade Level</b> button and choose your grade level. If you want a challenge, choose a higher grade level <em>at your own risk.</em> Or enter in your own custom word list!</li>
+                    <li>3. Check that the information under the title <b>Space Scramble</b> is correct. If so, press the <b>Start Game</b> button.</li>
+                    <li>4. Try and unscramble as many words as you can.</li>
+                    <li>5. Once the time is up, check your score and see if you made the leaderboard.</li>
+                </ol>                  
+            </div>
         </div>
         <!-- Added Instructions ^ -->
         <div id="login">
@@ -108,21 +103,94 @@
                     <li id="emailUseError">This email is already being used.</li>
                     <li id="loggedinsuccess">Successfully Logged In!</li>
                 </ul>
-
                 <p id="switchacc">Already have an account? <a id="changeLink" onclick='loginForm()'>Login</a></p>
                 <button class="signup" id="register" onclick="register_acc(); return false;">Register</button>
                 <button id="login_button" onclick="login(); return false;">Login</button>
             </form>
         </div>
-        <div id = "shop">
+
+        <div id="leaderboards">
             <button class="backbutton" onclick="backwards()"><< Back</button>
-            <h1>Choose Your Ship</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4">Leaderboards</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rank</td>
+                        <td>Username</td>
+                        <td>Grade Level</td>
+                        <td>Score</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>ethan</td>
+                        <td>5-6</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>                        
         </div>
+
         <footer id="footervalues">
             <ul>
-                <li><button class="menutext">Leaderboards</button></li>
-                <!-- Moved How to Play Button Up -->
-                <li><button class="menutext"; onclick="shop()">Shop</button></li>
+                <li><button class="menutext" onclick="leaders()">Leaderboards</button></li>
             </ul>
         </footer>
         <audio autoplay loop id="backgroundsound">

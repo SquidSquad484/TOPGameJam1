@@ -14,7 +14,6 @@ localStorage.musicvar = "on";
 localStorage.customList = false;
 
 //Switching between Modes and Grade Level
-let modebutton = document.getElementById('modebutton');
 let mainoverlay = document.getElementById('options');
 let modes = document.getElementById('modesoptions');
 let backbutton1 = document.getElementById('back1');
@@ -26,12 +25,6 @@ let backbutton3 = document.getElementById('back3');
 
 let modetext = document.getElementById('modesetting');
 let gradetext = document.getElementById('gradesetting');
-
-modebutton.addEventListener('click', function() {
-        modes.style.display = 'block';
-        mainoverlay.style.display = 'none';
-        gradetext.style.display = 'none';
-  }, false);
 
   backbutton1.addEventListener('click', function() {
       mainoverlay.style.display = 'block';
@@ -100,7 +93,7 @@ function rulesdisplay(){
     document.getElementById("footervalues").style.display="none";
     document.getElementById("login").style.display="none";
     document.getElementById("headermenu").style.display="none";
-    document.getElementById("shop").style.display="none";
+
 
     document.getElementById("rules").style.display="block";
 }
@@ -110,28 +103,22 @@ function logindisplay(){
     document.getElementById("footervalues").style.display="none";
     document.getElementById("rules").style.display="none";
     document.getElementById("headermenu").style.display="none";
-    document.getElementById("shop").style.display="none";
+
 
     document.getElementById("login").style.display="block";
 }
 
-function shop(){
-    document.getElementById("main").style.display="none";
-    document.getElementById("footervalues").style.display="none";
-    document.getElementById("rules").style.display="none";
-    document.getElementById("headermenu").style.display="none";
 
-    document.getElementById("shop").style.display="block";
-}
 
 function backwards(){
     document.getElementById("main").style.display="block";
     document.getElementById("footervalues").style.display="block";
     document.getElementById("headermenu").style.display="flex";
     
-    document.getElementById("shop").style.display="none";
+
     document.getElementById("rules").style.display="none";
     document.getElementById("login").style.display="none";
+    document.getElementById("leaderboards").style.display="none";
 }
 
 // Login and Sign Up Page
@@ -188,4 +175,14 @@ function wordAdd(string_text){
         document.getElementById("WordError").style.color="#ff5858";
         document.getElementById("WordSuccess").style.display="none";    
     }
+}
+
+function leaders() {
+    document.getElementById("main").style.display="none";
+    document.getElementById("footervalues").style.display="none";
+    document.getElementById("login").style.display="none";
+    document.getElementById("headermenu").style.display="none";
+    document.getElementById("rules").style.display="none";
+
+    document.getElementById("leaderboards").style.display="block";
 }

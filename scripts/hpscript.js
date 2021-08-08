@@ -26,11 +26,11 @@ let backbutton3 = document.getElementById('back3');
 let modetext = document.getElementById('modesetting');
 let gradetext = document.getElementById('gradesetting');
 
-  backbutton1.addEventListener('click', function() {
-      mainoverlay.style.display = 'block';
-      gradetext.style.display = 'block';
-      modes.style.display = 'none';
-  }, false);
+backbutton1.addEventListener('click', function() {
+    mainoverlay.style.display = 'block';
+    gradetext.style.display = 'block';
+    modes.style.display = 'none';
+}, false);
 
 gradesbutton.addEventListener('click', function() {
     grades.style.display = 'block';

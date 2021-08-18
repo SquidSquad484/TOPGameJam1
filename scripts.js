@@ -15,8 +15,9 @@
 const secondGradeList1 = ["gravity", "orbit", "space", "earth", "travel", "solar", "planet", "shuttle", "launch", "universe"];
 const thirdGradeList1 = ["observe", "distant", "solution", "approach", "saturn", "jupiter", "atmosphere", "intelligent", "theory", "globe"];
 const fourthGradeList1 = ["accurate", "extraordinary", "peculiar", "astronaut", "surface", "impact", "descend", "millennium", "century", "frontier"];
+const all = secondGradeList1.concat(thirdGradeList1).concat(fourthGradeList1);
 
-let userScore =0;
+let userScore = 0;
 let highScore = 0; 
 
 let wordCount = 0; //count words unscrambled
@@ -36,7 +37,11 @@ let timer = setInterval(function() {
     if (timeLeft <=0) {
         clearInterval(timer);
         countdown.innerText = "Time is up!";
-        //show end.html
+        const currScore = document.getElementById("scoreDisplay");
+        localStorage.setItem("currScore", currScore.textContent.substring(7, currScore.length));
+        localStorage.setItem("wordIncorrect", wordIncorrect);
+        localStorage.setItem("wordCount", wordCount);
+        window.location.replace("end-screen/end.html");
     } else {
         if (timeLeft <= 10) {
             countdown.style.color = "red";
@@ -68,10 +73,18 @@ function shuffle(word) {
 //generates new word
 newButton.addEventListener("click", () =>{
     shuffleDisplay.innerText = "";
+    let newWord;
+    let custom;
     //choose random element from chosen array
-    let newWord = secondGradeList1[Math.floor(Math.random() * secondGradeList1.length)];
+    if (localStorage.customList != "false") {
+        custom = localStorage.customList.split(",");
+        newWord = custom[Math.floor(Math.random() * custom.length)];
+        localStorage.setItem("listLength", localStorage.customList.length)
+    } else {
+        newWord = all[Math.floor(Math.random() * all.length)];
+        localStorage.setItem("listLength", all.length)
+    }
     wordToGuess = newWord;
-    console.log(newWord)
     shuffle(newWord);
     if (shuffleDisplay.innerHTML === wordToGuess) {
         shuffle(newWord); //shuffles word again if it is same as original word
@@ -96,7 +109,7 @@ submit.addEventListener("click", ()=>{
         //add points, display correct indication. Maybe a green text under "score" with "+100" or something
         newButton.click(true); //triggers click event for new word
         userScore += 100; 
-        score.innerText = "Score: " +userScore;
+        score.innerText = "Score: " + userScore;
         updateHighScore(userScore);
         addPointsUpEffect();
         wordCount++;

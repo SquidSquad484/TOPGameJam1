@@ -77,6 +77,9 @@ function gradelevel(currentID){
         document.getElementById(currentID).style.color="black";
         document.getElementById(localStorage.getItem('grademode')).style.backgroundColor="black";
         document.getElementById(localStorage.getItem('grademode')).style.color="white";
+        if (currentID != "Custom List") {
+            localStorage.setItem("customList", false);
+        }
     }
     localStorage.setItem('grademode', currentID);
     document.getElementById("gradesetting").textContent="Grade: " + localStorage.getItem('grademode');
@@ -154,9 +157,7 @@ function registerForm() {
 
 function wordAdd(string_text){
     if (string_text) {
-        arr = string_text.split(",");
-        arr = arr.filter(function(entry) { return entry.trim() != ''; })
-
+        arr = string_text.split(" ").join("").split(",");
         if (arr.length > 1) {
             localStorage.customList = arr;
 
